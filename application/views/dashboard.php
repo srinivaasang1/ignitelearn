@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 
 	<div id="body">
-		<p><h1>Login1 Page</h1></p>
+		<p><h1>Dashboard Page</h1></p>
+		<?php echo anchor('login/logout', 'logout'); ?> 
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>

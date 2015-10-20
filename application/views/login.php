@@ -25,7 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="body">
 		<p><h1>Login Page</h1></p>
 
-		<?php echo form_open('login/data_submitted');?>
+		<?php echo validation_errors(); ?>
+		<?php echo form_open('login/form_valid');?>
 		  <label for="username_lbl">username</label>
     <input type="text" name="username" id="usernameid"/>
 		  <label for="password_lbl">password</label>
@@ -33,16 +34,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  <input type="submit" value="Submit">
 		<?php echo form_close( ); ?>
 	</div>
-	<?php
-		if (isset($user_name)) 
-		{
-			echo "<h3>You have submitted these values</h3>";
-			echo "<label>Entered User Name : </label>";echo $user_name;
-			echo "<label>Entered Password : </label>";echo $password;
-		}
-			
-	?>
-
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
